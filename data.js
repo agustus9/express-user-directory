@@ -9,7 +9,7 @@ module.exports = {
       university: 'Pomor State University',
       job: 'Engineer IV',
       company: 'Stark, Feil and Bode',
-      skills: ['DMVPN', 'HDX', 'Rhino 3D'],
+      skills: null,
       phone: '7-(397)813-7803',
       address: {
         street_num: '78226',

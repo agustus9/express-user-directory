@@ -9,65 +9,24 @@
     <ul class="users">
       <!-- Mustache syntax for a loop -->
       {{#users}}
-        <li>Hello World!</li>
+        <li>
+          <img src="{{avatar}}" alt="" height="100" width="100">
+          <h3><a href="#">{{name}}</a></h3>
+          <!-- This is for when there *IS* a job -->
+          {{#job}}
+          <p>
+            {{job}}, {{company}}
+          </p>
+          {{/job}}
+
+          <!-- This is for where there is not a job (e.g. job is `falsey` (e.g. null, or undefined)) -->
+          {{^job}}
+          <p class="funemployed">
+            Available for hire
+          </p>
+          {{/job}}
+        </li>
       {{/users}}
-      
-      <li>
-        <img src="https://robohash.org/68.186.255.198.png" alt="" height="100" width="100">
-        <h3><a href="#">Robot Name</a></h3>
-        <p>
-          Job Name, Employer
-        </p>
-      </li>
-      <li>
-        <img src="https://robohash.org/68.186.255.192.png" alt="" height="100" width="100">
-        <h3><a href="#">Other Bot</a></h3>
-        <p class="funemployed">
-          Available for hire
-        </p>
-      </li>
-      <li>
-        <img src="https://robohash.org/68.186.255.198.png" alt="" height="100" width="100">
-        <h3><a href="#">Robot Name</a></h3>
-        <p>
-          Job Name, Employer
-        </p>
-      </li>
-      <li>
-        <img src="https://robohash.org/68.186.255.192.png" alt="" height="100" width="100">
-        <h3><a href="#">Other Bot</a></h3>
-        <p class="funemployed">
-          Available for hire
-        </p>
-      </li>
-      <li>
-        <img src="https://robohash.org/68.186.255.198.png" alt="" height="100" width="100">
-        <h3><a href="#">Robot Name</a></h3>
-        <p>
-          Job Name, Employer
-        </p>
-      </li>
-      <li>
-        <img src="https://robohash.org/68.186.255.192.png" alt="" height="100" width="100">
-        <h3><a href="#">Other Bot</a></h3>
-        <p class="funemployed">
-          Available for hire
-        </p>
-      </li>
-      <li>
-        <img src="https://robohash.org/68.186.255.198.png" alt="" height="100" width="100">
-        <h3><a href="#">Robot Name</a></h3>
-        <p>
-          Job Name, Employer
-        </p>
-      </li>
-      <li>
-        <img src="https://robohash.org/68.186.255.192.png" alt="" height="100" width="100">
-        <h3><a href="#">Other Bot</a></h3>
-        <p class="funemployed">
-          Available for hire
-        </p>
-      </li>
     </ul>
   </body>
 </html>
