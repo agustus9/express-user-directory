@@ -7,6 +7,11 @@
   </head>
   <body>
     <ul class="users">
+      <!-- Mustache syntax for a loop -->
+      {{#users}}
+        <li>Hello World!</li>
+      {{/users}}
+      
       <li>
         <img src="https://robohash.org/68.186.255.198.png" alt="" height="100" width="100">
         <h3><a href="#">Robot Name</a></h3>
