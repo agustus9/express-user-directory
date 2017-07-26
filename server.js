@@ -36,8 +36,8 @@ app.get('/info/:id', (request, response) => {
   // Eventually we will use a database for this! EXCITE!!!!
   const foundUser = userDirectory.users.find(user => user.id === requestId)
 
-  // Send the answer via JSON
-  response.json(foundUser)
+  // Render (draw) the info mustache template, *USING* the `foundUser` object
+  response.render('info', foundUser)
 })
 
 app.get('/', (request, response) => {
