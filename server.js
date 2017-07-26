@@ -22,8 +22,22 @@ app.set('view engine', 'mst')
 // Teach our app to use 'public' for all public static assets (CSS, client side JavaScript, images, videos, fonts, etc.)
 app.use(express.static('public'))
 
+// Get me information about the person who has id (:id, e.g. /info/1, /info/2, etc.)
 app.get('/info/:id', (request, response) => {
-  response.send(`info about user id = ${request.params.id}`)
+  // First, get the `id` from the params (from the URL), this comes from the `:id` part
+  const requestId = parseInt(request.params.id)
+
+  // Lets see what the params id is
+  console.log(`request.params.id is ${request.params.id}`)
+  // Lets see what the parseInt-ed value is
+  console.log(`requestId is ${requestId}`)
+
+  // Use `find` to search our userDirectory.users array for the user with that ID
+  // Eventually we will use a database for this! EXCITE!!!!
+  const foundUser = userDirectory.users.find(user => user.id === requestId)
+
+  // Send the answer via JSON
+  response.json(foundUser)
 })
 
 app.get('/', (request, response) => {
