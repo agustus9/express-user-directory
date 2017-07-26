@@ -11,7 +11,7 @@
       {{#users}}
         <li>
           <img src="{{avatar}}" alt="" height="100" width="100">
-          <h3><a href="#">{{name}}</a></h3>
+          <h3><a href="/info/{{id}}">{{name}}</a></h3>
           <!-- This is for when there *IS* a job -->
           {{#job}}
           <p>
