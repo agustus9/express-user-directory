@@ -3,6 +3,9 @@ const express = require('express')
 // Using the mustache express library
 const mustacheExpress = require('mustache-express')
 
+// Bring in our data (find it in the current directory (e.g. './') named 'data.js')
+const userDirectory = require('./data')
+
 // Build the express app
 const app = express()
 
@@ -23,7 +26,7 @@ app.get('/', (request, response) => {
   // sending content to the browser from javascript land
   // response.send('Hello, World. We are reloading!')
 
-  response.render('home')
+  response.render('home', userDirectory)
 })
 
 app.listen(3000, () => {
