@@ -16,6 +16,9 @@ app.set('views', './views')
 // Teach our app to use mustache for our templates
 app.set('view engine', 'mst')
 
+// Teach our app to use 'public' for all public static assets (CSS, client side JavaScript, images, videos, fonts, etc.)
+app.use(express.static('public'))
+
 app.get('/', (request, response) => {
   // sending content to the browser from javascript land
   // response.send('Hello, World. We are reloading!')
